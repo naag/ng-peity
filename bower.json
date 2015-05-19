@@ -1,7 +1,7 @@
 {
   "name": "ng-peity",
   "main": "ng-peity.js",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "homepage": "https://github.com/maggiben/ng-peity",
   "authors": [
     "Benjamin Maggi <benjaminmaggi@gmail.com>"
@@ -25,7 +25,7 @@
     "tests"
   ],
   "dependencies": {
-    "peity": "~3.1",
+    "peity": "~3.2",
     "jquery": "~2.0.3"
   }
 }
