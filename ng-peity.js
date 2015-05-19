@@ -76,7 +76,7 @@ var ngPeity = angular.module( 'ng-peity', [] )
 
                 // Redraw
                 var delayedResize = debounce(function() {
-                    var peity = chart.data().peity;
+                    var peity = chart.data()._peity;
                     peity.draw();
                 }, 300);
                 angular.element($window).bind('resize', delayedResize);
@@ -96,7 +96,7 @@ var ngPeity = angular.module( 'ng-peity', [] )
                         return;
                     }
 
-                    var peity = chart.data().peity;
+                    var peity = chart.data()._peity;
                     peity.opts = $.extend(peity.opts, newVal);
                     peity.draw();
                 });
