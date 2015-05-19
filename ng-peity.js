@@ -82,14 +82,20 @@ var ngPeity = angular.module( 'ng-peity', [] )
                 angular.element($window).bind('resize', delayedResize);
 
                 // Update chart values
-                scope.$watchCollection('data', function (newVal, oldVal) {
-                    if (newVal) {
-                        chart.text(newVal.join(",")).change();
+                scope.$watchCollection('data', function (newVal) {
+                    if (!newVal) {
+                        return;
                     }
+
+                    chart.text(newVal.join(",")).change();
                 });
                 
                 // Update options
-                scope.$watch('options', function (newVal, oldVal) {
+                scope.$watch('options', function (newVal) {
+                    if (!newVal) {
+                        return;
+                    }
+
                     var peity = chart.data().peity;
                     peity.opts = $.extend(peity.opts, newVal);
                     peity.draw();
